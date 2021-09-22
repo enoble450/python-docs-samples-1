@@ -22,7 +22,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/about')
 def hello():
     """Return a friendly HTTP greeting."""
     return 'Hello World!'
