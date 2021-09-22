@@ -25,8 +25,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
-    return "Evan Noble\n300264571\n\n\nAll rise for the jury. Please be seated.\nMembers of the jury, I understand you have a verdict.\nMembers of the Jury, I will now read the verdicts as they will appear in the permanent records of the Fourth Judicial District, State of Minnesota, County of Hennepin, District Court, Fourth Judicial District.\n\nState of Minnesota, Plaintiff versus Derek Michael Chauvin, Defendant.\nVerdict, Count One.\nCourt file number 27 CR 2012646.\nWe, the Jury, in the above entitled matter as to count one, Unintentional Second Degree Murder While Committing a Felony, find the defendant GUILTY.\nThis verdict agreed to this 20th day of April, 2021, at 1:44 PM. Signed Juror Foreperson, Juror Number 19."
-
+    return "Evan Noble \n 300264571 \n \n \n All rise for the jury. Please be seated. \n Members of the jury, I understand you have a verdict. \n Members of the Jury, I will now read the verdicts as they will appear in the permanent records of the Fourth Judicial District, State of Minnesota, County of Hennepin, District Court, Fourth Judicial District. \n \n State of Minnesota, Plaintiff versus Derek Michael Chauvin, Defendant. \n Verdict, Count One. \n Court file number 27 CR 2012646. \n We, the Jury, in the above entitled matter as to count one, Unintentional Second Degree Murder While Committing a Felony, find the defendant GUILTY. \n This verdict agreed to this 20th day of April, 2021, at 1:44 PM. Signed Juror Foreperson, Juror Number 19."
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
