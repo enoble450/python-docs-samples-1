@@ -26,7 +26,11 @@ app = Flask(__name__)
 def hello():
     """Return a friendly HTTP greeting."""
     return 'This is app version B'
-
+@app.route('/instance')
+def getid():
+	instanceid = os.getenv('GAE_INSTANCE')
+	return str(instanceid)
+	
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
