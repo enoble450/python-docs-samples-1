@@ -21,10 +21,11 @@ from flask import Flask
 # called `app` in `main.py`.
 app = Flask(__name__)
 
-
-@app.route('/version')
+@app.route('/')
 def hello():
-    """Return a friendly HTTP greeting."""
+	return 'Hello world!'
+@app.route('/version')
+def vers():
     return 'This is app version B'
 @app.route('/instance')
 def getid():
