@@ -25,7 +25,7 @@ app = Flask(__name__)
 @app.route('/version')
 def hello():
     """Return a friendly HTTP greeting."""
-    return 'This is app version A'
+    return 'This is app version B'
 
 
 if __name__ == '__main__':
