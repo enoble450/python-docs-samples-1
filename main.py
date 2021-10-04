@@ -1,6 +1,5 @@
 from flask import Flask, request, redirect
 from datetime import datetime
-import pytz
 import os
 from google.cloud import datastore
 app = Flask(__name__)
@@ -20,7 +19,7 @@ def main_page():
 	ent = dataclient.key('data', 'posts')
 	posts = dataclient.get(key=ent)
 	article = ""
-	with open('article.html','r') as page:
+	with open('articles.html','r') as page:
 		article = page.read()
 	html = ""
 	if posts:
@@ -28,7 +27,7 @@ def main_page():
 			array = json.loads(post)
 			raw = article.replace("!content!", array[0])
 			raw = raw.replace("!time!", array[1])
-			raw = raw.replace("!title!)", array[2])
+			raw = raw.replace("!title!", array[2])
 			html += raw
 	else:
 		return 'No Posts!'
@@ -60,13 +59,10 @@ def edit_page():
 @app.route('/submit', methods = ['POST'])
 def submit_post():
 	password = request_form['pass']
-	if password = "mySuperAwesomePassword":
+	if password == "mySuperAwesomePassword":
 		content = request.form['content']
 		title = request.form['title']
-		timeutc_n = datetime.utcnow()
-		timeutc = timeutc_n.replace(tzinfo=pytz.utc)
-		timelocal = timeutc.astimezone(pytz.timezone('America/Los_Angeles'))
-		time = str(timelocal)
+		time = str(datetime.utcnow())
 		post = json.dumps([content, title, time])
 		ent = dataclient.get(key=ent)
 		if posts:
